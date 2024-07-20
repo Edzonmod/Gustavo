@@ -1,0 +1,154 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    min-height: 100vh;
+    background-image: linear-gradient(-45deg, #FADADD 0%, #F8BBD0 50%, #F56C6C 100%);
+    font-family: 'Raleway', sans-serif;
+}
+
+.iris {
+    text-align: center;
+    margin-top: 50px; /* Ajusta el valor según necesites */
+    margin-bottom: 20px; /* Ajusta el valor según necesites */
+    font-family: 'Dancing Script', cursive; /* Aplica la fuente decorativa */
+    font-size: 36px; /* Ajusta el tamaño según necesites */
+    color: #fff; /* Cambia el color si es necesario */
+}
+
+.title {
+    text-align: center;
+    margin-top: 80px;
+    font-family: sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.container__slider {
+    max-width: 1000px;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    overflow: hidden; /* Para evitar desbordamientos */
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 600px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Añadido para el manejo de z-index */
+}
+
+.cards {
+    position: absolute; /* Cambiado a absolute para el manejo adecuado */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 10px; /* Añadido para mantener el borde redondeado */
+    overflow: hidden; /* Para evitar desbordamientos */
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#item-1:checked ~ .cards #selector-1,
+#item-2:checked ~ .cards #selector-2,
+#item-3:checked ~ .cards #selector-3,
+#item-4:checked ~ .cards #selector-4,
+#item-5:checked ~ .cards #selector-5 {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+#item-1:checked ~ .cards #selector-2,
+#item-1:checked ~ .cards #selector-3,
+#item-1:checked ~ .cards #selector-4,
+#item-1:checked ~ .cards #selector-5,
+#item-2:checked ~ .cards #selector-1,
+#item-2:checked ~ .cards #selector-3,
+#item-2:checked ~ .cards #selector-4,
+#item-2:checked ~ .cards #selector-5,
+#item-3:checked ~ .cards #selector-1,
+#item-3:checked ~ .cards #selector-2,
+#item-3:checked ~ .cards #selector-4,
+#item-3:checked ~ .cards #selector-5,
+#item-4:checked ~ .cards #selector-1,
+#item-4:checked ~ .cards #selector-2,
+#item-4:checked ~ .cards #selector-3,
+#item-4:checked ~ .cards #selector-5,
+#item-5:checked ~ .cards #selector-1,
+#item-5:checked ~ .cards #selector-2,
+#item-5:checked ~ .cards #selector-3,
+#item-5:checked ~ .cards #selector-4 {
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cards #selector-2,
+#item-2:checked ~ .cards #selector-3,
+#item-3:checked ~ .cards #selector-4,
+#item-4:checked ~ .cards #selector-5,
+#item-5:checked ~ .cards #selector-1 {
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.decla {
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.whatsapp-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.whatsapp-icon {
+    width: 50px; /* Ajusta el tamaño del ícono según tus necesidades */
+    height: auto;
+    margin-bottom: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.whatsapp-text {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 14px;
+    color: red; /* Color de texto que coincida con el de WhatsApp */
+}
